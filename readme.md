@@ -8,7 +8,7 @@ The code in this repo meant to be a reference point for anyone following along w
 
 ## To Start
 
-**Note** - one of the dependencies is currently not working with Node.js 10.3, please use [version 9.11.1](https://nodejs.org/download/release/v9.11.1/) (or around that, 8.x and 9.x should work fine) until then. 
+**Note** - one of the dependencies is currently not working with Node.js 10.3, please use [version 9.11.1](https://nodejs.org/download/release/v9.11.1/) (or around that, 8.x and 9.x should work fine) until then.
 
 `cd` into `catch-of-the-day` and follow along with the videos
 
@@ -22,22 +22,6 @@ You are welcome to use this code in your own applications. If you would like to 
 
 # Frequently Asked Questions
 
-#### :question: I'm getting error "Pre-built binaries not found for grpc@1.10.1 and node@10.3.0" and "Tried to download(403): https://storage.googleapis.com....."
-
-One of the dependencies is currently not working with Node.js 10.3, please use [version 9.11.1](https://nodejs.org/download/release/v9.11.1/) (or around that, 8.x and 9.x should work fine) until then. Don't sweat this as it's just build tooling and isn't related to the version of react you are using. 
-
-#### :question: I tried installing the Babel syntax highlighter but it didn't work!
-
-There are a few possible options:
-
-* If you are on Sublime Text 2, you should Upgrade to Sublime Text 3.
-* Some users have reported restarting works
-* You can try the [JavaScript Next](https://packagecontrol.io/packages/JavaScriptNext%20-%20ES6%20Syntax) syntax highlighter instead
-
-#### :question: I can't set Babel as the default syntax highlighter!
-
-Make sure you are in a file with the extension of `.js` before you do this step - you can't set the default for a file without having a file open!
-
 #### :question: I can't see the React tab in my dev tools
 
 Restart your dev tools or your chrome browser entirely. They will only show up when you are viewing a React app - so make sure you test it on Facebook or another website that is running React. It won't work on your empty `main.js` file until you `import React from 'react'`.
@@ -48,6 +32,14 @@ There may be a few different causes for this:
 
 * Webpack currently can't handle folder/file names that contain parentheses.
 * Webpack also has problems running inside folders for Dropbox/Google Drive type services. Git is recommended for keeping your files in sync across multiple computers.
+
+#### :question: I get `permission_denied` warnings in my console when setting up Firebase
+
+Be sure to select "Realtime database" as as your database type inside Firebase. If you created your database as a Cloud Firestore type, you can change it in the Database tab.
+
+#### :question: I can't log in to the store after I deployed to Netlify/Apache
+
+Firebase by default only allows logins from localhost or the Firebase website. You'll need to add your deploy URL to the Authorized Domains in the Sign-in method area of your Firebase console.
 
 ## Changes In the 2018 RE-Record
 
